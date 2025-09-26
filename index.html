@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Snake — Retro / Modern</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>Snake</h1>
+      <p class="subtitle">Classic snake with modern UI — playable on desktop & mobile</p>
+    </header>
+
+    <section class="game-panel">
+      <div class="left-panel">
+        <div class="canvas-wrap">
+          <canvas id="gameCanvas" width="480" height="480"></canvas>
+          <div id="overlay" class="overlay hidden">
+            <div id="overlayText">Press Start</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="right-panel">
+        <div class="stats">
+          <div class="score">Score: <span id="score">0</span></div>
+          <div class="highscore">Highscore: <span id="highscore">0</span></div>
+        </div>
+
+        <div class="controls">
+          <label for="difficulty">Difficulty</label>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+
+          <div class="btn-row">
+            <button id="startBtn" class="btn primary">Start</button>
+            <button id="pauseBtn" class="btn">Pause</button>
+            <button id="restartBtn" class="btn">Restart</button>
+          </div>
+
+          <div class="toggles">
+            <label><input type="checkbox" id="gridToggle" /> Show Grid</label>
+            <label><input type="checkbox" id="wrapToggle" /> Wrap Walls</label>
+            <label><input type="checkbox" id="soundToggle" checked /> Sound</label>
+          </div>
+
+          <hr />
+
+          <div class="instructions">
+            <h4>How to play</h4>
+            <ul>
+              <li>Arrow keys / WASD to move</li>
+              <li>On mobile: use arrows or swipe</li>
+              <li>Eat food to grow — avoid walls (unless wrap enabled) or self</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <nav class="mobile-controls">
+      <button class="dir" data-dir="up">▲</button>
+      <div class="dir-row">
+        <button class="dir" data-dir="left">◀</button>
+        <button class="dir" data-dir="down">▼</button>
+        <button class="dir" data-dir="right">▶</button>
+      </div>
+    </nav>
+
+    <footer class="footer">
+      <small>Made by 𝕮𝖊𝖓𝖙𝖆𝖚𝖗𝖚𝖘 — customize & share. Highscore stored locally.</small>
+    </footer>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
